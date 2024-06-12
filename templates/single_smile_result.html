@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMILES Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>SMILES Prediction Result</h1>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>SMILES</td>
+            <td>{{ result.SMILES }}</td>
+        </tr>
+        <tr>
+            <td>Molecule Name</td>
+            <td>{{ result["Molecule Name"] }}</td>
+        </tr>
+        <tr>
+            <td>Molecular Formula</td>
+            <td>{{ result["Molecular Formula"] }}</td>
+        </tr>
+        <tr>
+            <td>Bond Information</td>
+            <td>{{ result["Bond Information"] }}</td>
+        </tr>
+        <tr>
+            <td>Functional Groups</td>
+            <td>{{ result["Functional Groups"] }}</td>
+        </tr>
+        <tr>
+            <td>Atom Information</td>
+            <td>{{ result["Atom Information"] }}</td>
+        </tr>
+        <tr>
+            <td>Symmetry</td>
+            <td>{{ result.Symmetry }}</td>
+        </tr>
+        <tr>
+            <td>Planarity</td>
+            <td>{{ result.Planarity }}</td>
+        </tr>
+        <tr>
+            <td>Isomers</td>
+            <td>
+                {% for isomer in result.Isomers %}
+                    {{ isomer[0] }} ({{ isomer[1] }})<br>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>Molecular Weight</td>
+            <td>{{ result["Molecular weight"] }}</td>
+        </tr>
+        <tr>
+            <td>PiPi Stacking Potential</td>
+            <td>{{ result["PiPi Stacking Potential"] }}</td>
+        </tr>
+        <tr>
+            <td>ESP</td>
+            <td>{{ result.ESP }}</td>
+        </tr>
+        <tr>
+            <td>Oxygen Balance</td>
+            <td>{{ result.oxygen_balance }}</td>
+        </tr>
+        <tr>
+            <td>NO2 Count</td>
+            <td>{{ result["NO2 Count"] }}</td>
+        </tr>
+        <tr>
+            <td>NH2 Count</td>
+            <td>{{ result["NH2 Count"] }}</td>
+        </tr>
+        <tr>
+            <td>H Count</td>
+            <td>{{ result["H Count"] }}</td>
+        </tr>
+        <tr>
+            <td>Graphite-like Structure</td>
+            <td>{{ result["Graphite-like Structure"] }}</td>
+        </tr>
+        <tr>
+            <td>Specific bond</td>
+            <td>{{ result["Specific bond"] }}</td>
+        </tr>
+        <tr>
+            <td>Explosive groups</td>
+            <td>{{ result["Explosive groups"] }}</td>
+        </tr>
+        <tr>
+            <td>Energetics</td>
+            <td>{{ result.Energetics }}</td>
+        </tr>
+    </table>
+</body>
+</html>

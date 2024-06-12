@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/lightbox.css') }}"/>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="#"><em>GENOME</em> APPROACH</a>
+    </div>
+    <div class="buttons">
+      <button class="about-us details-button">About Us</button>
+      <button class="help-button details-button">Help</button>
+    </div>
+    <div class="notification-container">
+      <p class="about-content">
+        ABOUT-US <br />This is the About Us page. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Facilis doloribus, quibusdam, fugiat
+        voluptatibus suscipit saepe consequatur dolores eos iure quis dolore
+        repudiandae! Modi ut facere aliquam quasi! Ut, accusantium esse.
+      </p>
+      <p class="help-content">This is a help page.</p>
+      <button class="close-notification">Close</button> 
+    </div>
+  </header>
+
+  <div class="overlay"></div>
+  <video autoplay muted loop id="background-video">
+    <source src="{{ url_for('static', filename='images/colpartical.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="wrapper">
+    <form id="loginForm" action="{{ url_for('home') }}">
+      <h1>Login</h1>
+      <div class="input-box">
+        <input id="username" type="text" placeholder="Username" required>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input id="password" type="password" placeholder="Password" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox">Remember Me</label>
+        <a href="#">Forgot Password</a>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="register-link">
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+      </div>
+    </form>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>
+        <i class="fa fa-copyright"></i> Copyright 2024 by CSG DIVISION
+        HEMRL
+        <a href="#" rel="sponsored" target="_parent">HEMRL INTERNS</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const aboutUsButton = document.querySelector(".about-us");
+    const helpButton = document.querySelector(".help-button");
+    const notificationContainer = document.querySelector(".notification-container");
+    const closeNotificationButton = document.querySelector(".close-notification");
+    const aboutContent = document.querySelector(".about-content");
+    const helpContent = document.querySelector(".help-content");
+    const overlay = document.querySelector(".overlay");
+
+    function showNotification(button) {
+      notificationContainer.classList.add("visible");
+      overlay.classList.add("visible");
+
+      const existingContent = notificationContainer.querySelectorAll("p");
+      existingContent.forEach((p) => (p.style.display = "none"));
+
+      if (button === aboutUsButton) {
+        aboutContent.style.display = "block";
+      } else {
+        helpContent.style.display = "block";
+      }
+    }
+
+    function hideNotification() {
+      notificationContainer.classList.remove("visible");
+      overlay.classList.remove("visible");
+    }
+
+    aboutUsButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      showNotification(aboutUsButton);
+    });
+
+    helpButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      showNotification(helpButton);
+    });
+
+    closeNotificationButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      hideNotification();
+    });
+
+    overlay.addEventListener("click", hideNotification);
+    document.body.addEventListener("click", hideNotification);
+
+    notificationContainer.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/lightbox.css') }}"/>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="#"><em>GENOME</em> APPROACH</a>
+    </div>
+    <div class="buttons">
+      <button class="about-us details-button">About Us</button>
+      <button class="help-button details-button">Help</button>
+    </div>
+    <div class="notification-container hidden">
+      <p class="about-content">
+        ABOUT-US <br />This is the About Us page. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Facilis doloribus, quibusdam, fugiat
+        voluptatibus suscipit saepe consequatur dolores eos iure quis dolore
+        repudiandae! Modi ut facere aliquam quasi! Ut, accusantium esse.
+      </p>
+      <p class="help-content">This is a help page.</p>
+      <button class="close-notification">Close</button>
+    </div>
+  </header>
+
+  <div class="overlay"></div>
+  <video autoplay muted loop id="background-video">
+    <source src="{{ url_for('static', filename='images/colpartical.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="wrapper">
+    <form id="registerForm" action="{{ url_for('register') }}" method="POST">
+      <h1>Register</h1>
+      <div class="input-box">
+        <input id="username" name="username" type="text" placeholder="Username" required>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input id="email" name="email" type="email" placeholder="Email" required>
+        <i class='bx bxs-envelope'></i>
+      </div>
+      <div class="input-box">
+        <input id="password" name="password" type="password" placeholder="Password" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+      <div class="input-box">
+        <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm Password" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+      <button type="submit" class="btn">Register</button>
+      <div class="login-link">
+        <p>Already have an account? <a href="{{ url_for('index') }}">Login</a></p>
+      </div>
+    </form>
+    
+  </div>
+
+  <script>
+    const aboutUsButton = document.querySelector(".about-us");
+    const helpButton = document.querySelector(".help-button");
+    const notificationContainer = document.querySelector(".notification-container");
+    const closeNotificationButton = document.querySelector(".close-notification");
+    const aboutContent = document.querySelector(".about-content");
+    const helpContent = document.querySelector(".help-content");
+
+    function showNotification(button) {
+      notificationContainer.classList.add("visible");
+
+      const existingContent = notificationContainer.querySelectorAll("p");
+      existingContent.forEach((p) => (p.style.display = "none"));
+
+      if (button === aboutUsButton) {
+        aboutContent.style.display = "block";
+      } else {
+        helpContent.style.display = "block";
+      }
+    }
+
+    function hideNotification() {
+      notificationContainer.classList.remove("visible");
+    }
+
+    aboutUsButton.addEventListener("click", () => showNotification(aboutUsButton));
+    helpButton.addEventListener("click", () => showNotification(helpButton));
+    closeNotificationButton.addEventListener("click", hideNotification);
+  </script>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>
+        <i class="fa fa-copyright"></i> Copyright 2024 by CSG DIVISION
+        HEMRL
+        <a href="#" rel="sponsored" target="_parent">HEMRL INTERNS</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

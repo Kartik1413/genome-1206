@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Custom File Upload Button</title>
+   <!-- Font Awesome Icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+   <!-- Google Fonts  -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <!-- Stylesheet -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/tab2.css') }}">
+</head>
+<body>
+   <header class="main-header clearfix" role="header">
+      <div class="logo">
+        <a href="#"><em>GENOME</em> APPROACH</a>
+      </div>
+      <div class="buttons">
+         <a href="{{ url_for('home') }}"><button class="home-button details-button"><i class='bx bx-home bx-md'></i></button></a>
+        <button class="about-us details-button">About Us</button>
+        <button class="help-button details-button">Help</button>
+      </div>
+      <div class="notification-container hidden">
+        <p class="about-content">
+          ABOUT-US <br />This is the About Us page. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Facilis doloribus, quibusdam, fugiat
+          voluptatibus suscipit saepe consequatur dolores eos iure quis dolore
+          repudiandae! Modi ut facere aliquam quasi! Ut, accusantium esse.
+        </p>
+        <p class="help-content">This is a help page.</p>
+        <button class="close-notification">Close</button>
+      </div>
+    </header>
+    
+   <video autoplay muted loop id="background-video">
+      <source src="{{ url_for('static', filename='images/colpartical.mp4') }}" type="video/mp4">
+      Your browser does not support the video tag.
+   </video>
+   <div class="overlay"></div>
+
+   <div class="container">
+      <input type="file" id="file-input" multiple />
+      <label for="file-input">
+         <i class="fa-solid fa-arrow-up-from-bracket"></i>
+         &nbsp; Choose Files To Upload
+      </label>
+      <div id="num-of-files">No Files Chosen</div>
+      <button type="button">Generate</button>
+      <ul id="files-list"></ul>
+   </div>
+
+   <footer class="main-footer">
+      <div class="footer-content">
+        <p>
+          <i class="fa fa-copyright"></i> Copyright 2024 by CSG DIVISION
+          HEMRL
+          <a href="#" rel="sponsored" target="_parent">HEMRL INTERNS</a>
+        </p>
+      </div>
+    </footer>
+
+   <!-- Script -->
+   <script>
+      document.getElementById('file-input').addEventListener('change', function() {
+         const files = this.files;
+         const numOfFiles = document.getElementById('num-of-files');
+         const filesList = document.getElementById('files-list');
+         
+         numOfFiles.textContent = `${files.length} Files Chosen`;
+         filesList.innerHTML = '';
+
+         for (let i = 0; i < files.length; i++) {
+            const li = document.createElement('li');
+            li.textContent = files[i].name;
+            filesList.appendChild(li);
+         }
+      });
+   </script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Custom File Upload Button</title>
+   <!-- Font Awesome Icons -->
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+   <!-- Google Fonts  -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+   <header class="main-header clearfix" role="header">
+      <div class="logo">
+         <a href="#"><em>GENOME</em> APPROACH</a>
+      </div>
+      <div class="buttons">
+         <a href="{{ url_for('home') }}"><button class="home-button details-button"><i class='bx bx-home bx-md'></i></button></a>
+         <button class="about-us details-button">About Us</button>
+         <button class="help-button details-button">Help</button>
+      </div>
+
+      <div class="notification-container">
+         <p class="about-content">
+            ABOUT-US <br />This is the About Us page. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Facilis doloribus, quibusdam, fugiat
+            voluptatibus suscipit saepe consequatur dolores eos iure quis dolore
+            repudiandae! Modi ut facere aliquam quasi! Ut, accusantium esse.
+         </p>
+
+         <p class="help-content">This is a help page.</p>
+         <button class="close-notification">Close</button>
+      </div>
+   </header>
+
+   <video autoplay muted loop id="background-video">
+      <source src="{{ url_for('static', filename='images/colpartical.mp4') }}" type="video/mp4">
+      Your browser does not support the video tag.
+   </video>
+   <div class="overlay"></div>
+
+   <section class="container">
+      <div class="card__container">
+         <div class="card__content">
+            <div class="card__wrapper">
+               <article class="card__article">
+                  <div class="card__image">
+                     <div class="card__shadow"></div>
+                  </div>
+
+                  <div class="card__data">
+                     <h3 class="card__name">Single_smile</h3>
+                     <p class="card__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, vitae qui. Adipisci accusamus
+                        libero nobis voluptatibus eos quos natus enim animi commodi. Iusto aperiam esse laborum ratione
+                        sunt sequi deleniti.
+                     </p>
+
+                     <button class="card__button" onclick="openModal('modal_single_smile') "><i class='bx bx-chevrons-right bx-md'></i></button>
+                  </div>
+               </article>
+
+               <article class="card__article">
+                  <div class="card__image">
+                     <div class="card__shadow"></div>
+                  </div>
+
+                  <div class="card__data">
+                     <h3 class="card__name">Pubchem</h3>
+                     <p class="card__description">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, perspiciatis. Cumque
+                        reprehenderit consequuntur quod aliquam quo quis labore officiis minima nemo nihil nulla
+                        nesciunt odit est, aperiam id, in excepturi?
+                     </p>
+
+                     <button class="card__button" onclick="openModal('modal_pubchem')"><i class='bx bx-chevrons-right bx-md'></i></button>
+                  </div>
+               </article>
+
+               <article class="card__article">
+                  <div class="card__image">
+                     <div class="card__shadow"></div>
+                  </div>
+
+                  <div class="card__data">
+                     <h3 class="card__name">28 Compounds</h3>
+                     <p class="card__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci blanditiis alias, consequuntur
+                        dolorum quibusdam debitis pariatur commodi, accusamus, sint a eius ex ipsam reprehenderit
+                        voluptatibus fuga culpa provident eaque aspernatur!
+                     </p>
+
+                     <button class="card__button" onclick="openModal('modal_tecompounds')"><i class='bx bx-chevrons-right bx-md'></i></button>
+                  </div>
+               </article>
+
+               <article class="card__article">
+                  <div class="card__image">
+                     <div class="card__shadow"></div>
+                  </div>
+
+                  <div class="card__data">
+                     <h3 class="card__name">45 lakh compounds</h3>
+                     <p class="card__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem, repudiandae
+                        dolore quisquam quidem veritatis vitae veniam quas distinctio iure ut neque aut tenetur eaque
+                        porro maxime corrupti voluptate esse!
+                     </p>
+
+                     <button class="card__button" onclick="openModal('modal_ffcompounds')"><i class='bx bx-chevrons-right bx-md'></i></i></button>
+                  </div>
+               </article>
+               <article class="card__article">
+                  <div class="card__image">
+                     <div class="card__shadow"></div>
+                  </div>
+
+                  <div class="card__data">
+                     <h3 class="card__name">sample1</h3>
+                     <p class="card__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem, repudiandae
+                        dolore quisquam quidem veritatis vitae veniam quas distinctio iure ut neque aut tenetur eaque
+                        porro maxime corrupti voluptate esse!
+                     </p>
+
+                     <button class="card__button" onclick="openModal('modal_pubchem')"><i class='bx bx-chevrons-right bx-md'></i></button>
+                  </div>
+               </article>
+               <article class="card__article">
+                  <div class="card__image">
+                     <div class="card__shadow"></div>
+                  </div>
+
+                  <div class="card__data">
+                     <h3 class="card__name">sample2</h3>
+                     <p class="card__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem, repudiandae
+                        dolore quisquam quidem veritatis vitae veniam quas distinctio iure ut neque aut tenetur eaque
+                        porro maxime corrupti voluptate esse!
+                     </p>
+
+                     <button class="card__button" onclick="openModal('modal_pubchem')"><i class='bx bx-chevrons-right bx-md'></i></button>
+                  </div>
+               </article>
+               <article class="card__article">
+                  <div class="card__image">
+                     <div class="card__shadow"></div>
+                  </div>
+
+                  <div class="card__data">
+                     <h3 class="card__name">sample3</h3>
+                     <p class="card__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem, repudiandae
+                        dolore quisquam quidem veritatis vitae veniam quas distinctio iure ut neque aut tenetur eaque
+                        porro maxime corrupti voluptate esse!
+                     </p>
+
+                     <button class="card__button" onclick="openModal('modal_pubchem')"><i class='bx bx-chevrons-right bx-md'></i></button>
+                  </div>
+               </article>
+               <article class="card__article">
+                  <div class="card__image">
+                     <div class="card__shadow"></div>
+                  </div>
+
+                  <div class="card__data">
+                     <h3 class="card__name">sample4</h3>
+                     <p class="card__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem, repudiandae
+                        dolore quisquam quidem veritatis vitae veniam quas distinctio iure ut neque aut tenetur eaque
+                        porro maxime corrupti voluptate esse!
+                     </p>
+
+                     <button class="card__button" onclick="openModal('modal_pubchem')"><i class='bx bx-chevrons-right bx-md'></i></button>
+                  </div>
+               </article>
+               <article class="card__article">
+                  <div class="card__image">
+                     <div class="card__shadow"></div>
+                  </div>
+
+                  <div class="card__data">
+                     <h3 class="card__name">sample5</h3>
+                     <p class="card__description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem, repudiandae
+                        dolore quisquam quidem veritatis vitae veniam quas distinctio iure ut neque aut tenetur eaque
+                        porro maxime corrupti voluptate esse!
+                     </p>
+
+                     <button class="card__button" onclick="openModal('modal_pubchem')"><i class='bx bx-chevrons-right bx-md'></i></button>
+                  </div>
+               </article>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <div id="modal_single_smile" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal_single_smile')">&times;</span>
+        <div class="modal-body2">
+          <h2>
+            Predict Properties:
+            <div class="button-group2">
+              <button class="modal-button2" id="btn-smiles" onclick="showInput('smiles')">Smiles</button>
+              <button class="modal-button2" id="btn-molecular" onclick="showInput('molecular')">Molecular Formula</button>
+            </div>
+          </h2>
+          <div class="input-group">
+            <input type="text" id="input-smiles" class="modal-input" placeholder="Enter your SMILES" style="display: none;" />
+            <button class="modal-button2" id="btn-predict-smiles" style="display: none;" onclick="predictSmiles()">Predict 1</button>
+            <input type="text" id="input-molecular" class="modal-input" placeholder="Enter your Molecular Formula" style="display: none;" />
+            <button class="modal-button2" id="btn-predict-molecular" style="display: none;" onclick="predictMolecular()">Predict 2</button>
+          </div>
+          <!-- Your GIF code here -->
+          <div id="loading-icon" style="display: none; text-align: center;">
+            <div style="width: 300px; height: 250px; margin: auto;">
+              <iframe src="https://giphy.com/embed/uIJBFZoOaifHf52MER" width="100%" height="100%" style="display: block; margin: auto;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            </div>
+            <p><a href="https://giphy.com/gifs/UniversalMusicIndia-elvish-dg-immortals-bawli-uIJBFZoOaifHf52MER"></a></p>
+          </div>
+          
+        </div>
+        <table id="result-table" style="display: none;">
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Results will be appended here -->
+          </tbody>
+        </table>
+        <table id="result-table-molecular" style="display: none;">
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody id="table-body-molecular">
+            <!-- Molecular results will be appended here -->
+          </tbody>
+        </table>
+        <script src="{{ url_for('static', filename='js/modal_single_smile.js') }}"></script>
+      </div>
+    </div>
+    
+    
+   <!-- Modal for Pubchem -->
+   <div id="modal_pubchem" class="modal">
+      <div class="modal-content">
+          <span class="close" onclick="closeModal('modal_pubchem')">&times;</span>
+          <div class="container1">
+              <form id="upload-form" enctype="multipart/form-data">
+                  <input type="file" name='file' id="file-input-pubchem" multiple />
+                  <label for="file-input-pubchem">
+                      <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                      &nbsp; Choose Files To Upload
+                  </label>
+                  <div id="num-of-files-pubchem">No Files Chosen</div>
+                  <button type="button" id="generate-button">Generate</button>
+              </form>
+              <br>
+              <button type="button" class="see-info-button">See Info</button>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Table to display CSV contents -->
+  <table id="file-contents">
+      <!-- Contents will be displayed here -->
+  </table>
+  
+  <script src="{{ url_for('static', filename='js/modal_pubchem.js') }}"></script>
+  
+  
+   
+   
+
+   <!-- Modal for TE Compounds -->
+   <div id="modal_tecompounds" class="modal">
+      <div class="modal-content">
+         <span class="close" onclick="closeModal('modal_tecompounds')">&times;</span>
+         <article class="card__article">
+            <div class="card__image">
+               <div class="card__shadow"></div>
+            </div>
+
+            <div class="card__data1">
+               <h3 class="card__name1">sample2</h3>
+               <p class="card__description1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem, repudiandae
+                  dolore quisquam quidem veritatis vitae veniam quas distinctio iure ut neque aut tenetur eaque
+                  porro maxime corrupti voluptate esse!
+               </p>
+            </div>
+         </article>
+         <article class="card__article">
+            <div class="card__image">
+               <div class="card__shadow"></div>
+            </div>
+
+            <div class="card__data">
+               <h3 class="card__name">sample2</h3>
+               <p class="card__description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum exercitationem, repudiandae
+                  dolore quisquam quidem veritatis vitae veniam quas distinctio iure ut neque aut tenetur eaque
+                  porro maxime corrupti voluptate esse!
+               </p>
+               <button class="card__button" onclick="openModal('modal_pubchem')"><i class='bx bx-chevrons-right bx-md'></i></button>
+            </div>
+         </article>
+      </div>
+   </div>
+
+   <!-- Modal for 45 lakh compounds -->
+   <div id="modal_ffcompounds" class="modal">
+      <div class="modal-content">
+         <span class="close" onclick="closeModal('modal_ffcompounds')">&times;</span>
+         <div class="container1">
+            <input type="file" id="file-input-ffcompounds" multiple />
+            <label for="file-input-ffcompounds">
+               <i class="fa-solid fa-arrow-up-from-bracket"></i>
+               &nbsp; Choose Files To Upload
+            </label>
+            <div id="num-of-files-ffcompounds">No Files Chosen</div>
+            <button type="button">Generate</button>
+            <ul id="files-list-ffcompounds"></ul>
+            <button type="button" class="see-info-button">See Info</button>
+         </div>
+      </div>
+   </div>
+
+   <!-- JavaScript -->
+   <script>
+      function showInput(type) {
+        // Hide all input fields and buttons initially
+        document.getElementById('input-smiles').style.display = 'none';
+        document.getElementById('btn-predict-smiles').style.display = 'none';
+        document.getElementById('input-molecular').style.display = 'none';
+        document.getElementById('btn-predict-molecular').style.display = 'none';
+      
+        // Display the relevant input field and button based on the type
+        if (type === 'smiles') {
+          document.getElementById('input-smiles').style.display = 'block';
+          document.getElementById('btn-predict-smiles').style.display = 'block';
+          document.getElementById('input-molecular').style.display = 'none';
+          document.getElementById('btn-predict-molecular').style.display = 'none';
+          // Hide the Molecular Formula results
+          document.getElementById('result-table-molecular').style.display = 'none';
+        } else if (type === 'molecular') {
+          document.getElementById('input-smiles').style.display = 'none';
+          document.getElementById('btn-predict-smiles').style.display = 'none';
+          document.getElementById('input-molecular').style.display = 'block';
+          document.getElementById('btn-predict-molecular').style.display = 'block';
+          // Hide the Smiles results
+          document.getElementById('result-table').style.display = 'none';
+        }
+      }
+    
+      function predictSmiles() {
+        const smiles = document.getElementById('input-smiles').value;
+        fetch('/predict1', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ smiles: smiles })
+        })
+        .then(response => response.json())
+        .then(data => {
+          const tableBody = document.getElementById('table-body');
+          tableBody.innerHTML = '';
+    
+          // Populate the table with the result data
+          for (const [key, value] of Object.entries(data.result)) {
+            const row = document.createElement('tr');
+            const keyCell = document.createElement('td');
+            const valueCell = document.createElement('td');
+            keyCell.textContent = key;
+            valueCell.textContent = value;
+            row.appendChild(keyCell);
+            row.appendChild(valueCell);
+            tableBody.appendChild(row);
+          }
+    
+          document.getElementById('result-table').style.display = 'table';
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      }
+      
+      function predictMolecular() {
+  // Show loading icon
+  document.getElementById('loading-icon').style.display = 'block';
+
+  const formula = document.getElementById('input-molecular').value;
+  fetch('/predict2', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ formula: formula })
+  })
+  .then(response => response.json())
+  .then(data => {
+    const tableBody = document.getElementById('table-body-molecular');
+    tableBody.innerHTML = '';
+
+    // Populate the table with the molecular result data
+    for (const [key, value] of Object.entries(data.result)) {
+      const row = document.createElement('tr');
+      const keyCell = document.createElement('td');
+      const valueCell = document.createElement('td');
+      keyCell.textContent = key;
+      valueCell.textContent = value;
+      row.appendChild(keyCell);
+      row.appendChild(valueCell);
+      tableBody.appendChild(row);
+    }
+
+    // Hide loading icon
+    document.getElementById('loading-icon').style.display = 'none';
+
+    // Display the result table
+    document.getElementById('result-table-molecular').style.display = 'table';
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    // Hide loading icon in case of error
+    document.getElementById('loading-icon').style.display = 'none';
+  });
+}
+      function closeModal(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = "none";
+        resetModalInputs();
+      }
+    
+      function resetModalInputs() {
+        document.getElementById('input-smiles').value = '';
+        document.getElementById('input-molecular').value = '';
+        document.getElementById('table-body').innerHTML = '';
+        document.getElementById('table-body-molecular').innerHTML = '';
+        document.getElementById('result-table').style.display = 'none';
+        document.getElementById('result-table-molecular').style.display = 'none';
+      }
+
+      // Function to handle file input change event
+   document.getElementById('file-input-pubchem').addEventListener('change', function(event) {
+      const fileList = event.target.files;
+      document.getElementById('num-of-files-pubchem').textContent = fileList.length + ' file(s) chosen';
+   });
+
+   // Function to close the modal
+   function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+   }
+   document.querySelector('#upload-form button').addEventListener('click', uploadFile);
+
+    </script>
+<script src="{{ url_for('static', filename='js/modal_pubchem.js') }}"></script>
+</div> 
+</body>
+</html>

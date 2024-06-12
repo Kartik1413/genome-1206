@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+@import url(fontawesome.css);
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body{
+    font-family: 'Montserrat', sans-serif;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    z-index: 1; /* Make sure the overlay covers the entire page */
+  }
+  
+  /* header */
+  .main-header {
+  background-color: rgba(0, 0, 0, 0.95);
+  height: 80px;
+  position: fixed;
+  z-index: 10; /* Decrease the z-index value */
+  width: 100%;
+  top: 0;
+  }
+  
+  .main-header .logo {
+    float: left;
+    line-height: 80px;
+    padding-left: 60px;
+  }
+  
+  .main-header .logo a {
+    font-size: 36px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    color: white;
+  }
+  .main-header .logo a em {
+    font-style: normal;
+    color: #f5a425;
+  }
+  
+  .main-menu {
+    float: right;
+    padding-right: 60px;
+  }
+  
+  .buttons {
+  display: flex;
+  justify-content: flex-end; /* Aligns buttons to the right */
+  margin-right: 20px;
+  margin-left: 40px;
+  margin-top: 10px;
+  font-size: 20px;
+  }
+  
+  .buttons button {
+  background-color: rgb(7, 7, 7); /* Dark background for buttons */
+  color: white; /* Ensures text is visible on dark background */
+  padding: 10px 15px; /* Adds some padding for better look */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Indicate clickable button */
+  margin-right: 20px;
+  font-size: 20px;
+  
+  }
+  
+  .notification-container {
+  position: fixed; /* Positions the notification box */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #000;
+  right: 1%;/* Center horizontally */
+  width: 500px;
+  height: 300px;
+  /* Adjust positioning as needed */
+  color: white; /* Background color of the notification box */
+  padding: 20px;
+  border: 1px solid #ddd; /* Border for the notification box */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Adds a shadow */
+  text-align: center; /* Center the content within the box */
+  display: none; /* Hide the notification initially */
+  font-size: 19px;
+  }
+  
+  .notification-container.visible {
+  display: block; /* Show the notification when triggered */
+  }
+  
+  .close-notification {
+  background-color: #f18c2e; /* Background color for the close button */
+  color: rgb(247, 242, 242); /* Text color for the close button */
+  padding: 5px 40px;
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Indicate clickable button */
+  }
+  
+  .container {
+    top: 40px;
+    width: 90%;
+    max-width: 34.37em;
+    position: relative;
+    margin: 3.12em auto;
+    padding: 3.12em 1.25em;
+    border-radius: 0.43em;
+    box-shadow: 0 1.25em 2.18em rgb(1, 28, 71, 0.3);
+    z-index: 11;
+  }
+  input[type="file"] {
+    display: none;
+  }
+  label {
+    display: block;
+    position: relative;
+    background-color: #025bee;
+    color: #ffffff;
+    font-size: 1.12em;
+    font-weight: 500;
+    text-align: center;
+    width: 18.75em;
+    padding: 1.12em 0;
+    margin: auto;
+    border-radius: 0.31em;
+    cursor: pointer;
+  }
+  #num-of-files {
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    margin: 1.25em 0 1.87em 0;
+  }
+  ul {
+    color: white;
+    list-style-type: none;
+    margin-top: 15px;
+  }
+  .container {
+    text-align: center;
+    margin-top: 50px; /* Adjust margin-top to position the container slightly lower */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+}
+  button {
+    padding: 15px 30px; /* Adjust padding to reduce button size */
+    font-size: 18px; /* Reduce font size */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add transition effect */
+    margin-top: auto; /* Push the button to the bottom */
+}
+
+button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+#background-video {
+    min-width: 100%;
+    min-height: 100vh;
+    max-width: 100%;
+    max-height: 100vh;
+    position: fixed; /* Fixed position so it covers the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire container */
+    z-index: -1; /* Place the video behind other content */
+  }
+  .main-footer {
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0; /* Position the footer at the bottom of the viewport */
+    width: 100%;
+    z-index: 11; /* Increase the z-index value */
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center;
+    flex-direction: column; /* Align items vertically */
+  }
+  
+  .footer-content p {
+    margin: 0;
+    justify-content: center;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .footer-links li:last-child {
+    margin-right: 0;
+  }
+  
+  .footer-links li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-links li a:hover {
+    text-decoration: underline;
+  }
+  

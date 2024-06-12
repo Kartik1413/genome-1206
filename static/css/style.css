@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+@import url(fontawesome.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "Poppins", sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-link a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.login-link a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: #fff;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling since video covers the entire background */
+    font-family: 'Montserrat', sans-serif;
+}
+
+#background-video {
+    position: fixed; /* Fixed position so it covers the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire container */
+    z-index: -1; /* Place the video behind other content */
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1; /* Ensure the video is behind the overlay */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    z-index: 1; /* Make sure the overlay covers the entire page */
+}
+
+/* header */
+.main-header {
+  background-color: rgba(0, 0, 0, 0.95);
+  height: 80px;
+  position: fixed;
+  z-index: 10; /* Decrease the z-index value */
+  width: 100%;
+  top: 0;
+}
+
+.main-header .logo {
+    float: left;
+    line-height: 80px;
+    padding-left: 60px;
+}
+
+.main-header .logo a {
+    font-size: 36px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 800;
+    color: white;
+}
+.main-header .logo a em {
+    font-style: normal;
+    color: #f5a425;
+}
+
+.main-menu {
+    float: right;
+    padding-right: 60px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end; /* Aligns buttons to the right */
+  margin-right: 20px;
+  margin-left: 40px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.buttons button {
+  background-color: rgb(7, 7, 7); /* Dark background for buttons */
+  color: white; /* Ensures text is visible on dark background */
+  padding: 10px 15px; /* Adds some padding for better look */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Indicate clickable button */
+  margin-right: 20px;
+  font-size: 20px;
+  
+}
+
+.notification-container {
+  position: fixed; /* Positions the notification box */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #000;
+  right: 1%;/* Center horizontally */
+  width: 500px;
+  height: 300px;
+  /* Adjust positioning as needed */
+  color: white; /* Background color of the notification box */
+  padding: 20px;
+  border: 1px solid #ddd; /* Border for the notification box */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Adds a shadow */
+  text-align: center; /* Center the content within the box */
+  display: none; /* Hide the notification initially */
+  font-size: 19px;
+}
+
+.notification-container.visible {
+  display: block; /* Show the notification when triggered */
+}
+
+.close-notification {
+  background-color: #f18c2e; /* Background color for the close button */
+  color: rgb(247, 242, 242); /* Text color for the close button */
+  padding: 5px 40px;
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Indicate clickable button */
+}
+
+.main-menu li.has-submenu a:after {
+  content: '\f107';
+  font-family: "FontAwesome";
+  margin-left: 5px;
+}
+
+.main-menu li.has-submenu ul li a:after {
+  display: none;
+}
+
+.main-menu li .sub-menu {
+  position: absolute;
+  width: 160px;
+  background-color: #000000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.main-menu li:hover .sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.main-menu li .sub-menu li {
+  display: block;
+  line-height: 20px;
+  margin-left: 0px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #000000;
+}
+
+/* Additional styling for your existing content */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* Ensure the wrapper covers the entire viewport */
+  position: relative; /* Relative position for containing the form */
+  z-index: 1; /* Place the form above the video */
+}
+
+.wrapper form {
+  width: 420px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(9px);
+  color: #fff;
+  border-radius: 12px;
+  padding: 30px 40px;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+  color: #fff;
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  transform: translate(-50%);
+  font-size: 20px;
+}
+
+.wrapper .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+  accent-color: #fff;
+  margin-right: 3px;
+}
+
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+.wrapper .btn {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.register-link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link p a:hover {
+  text-decoration: underline;
+}
+
+/* footer */
+.main-footer {
+  background-color: black;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0; /* Position the footer at the bottom of the viewport */
+  width: 100%;
+  z-index: 10; /* Increase the z-index value */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center;
+  flex-direction: column; /* Align items vertically */
+}
+
+.footer-content p {
+  margin: 0;
+  justify-content: center;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.footer-links li:last-child {
+  margin-right: 0;
+}
+
+.footer-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links li a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,116 @@
+body {
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+  }
+  
+  #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1; /* Ensure the video is behind the overlay */
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    z-index: 1; /* Make sure the overlay covers the entire page */
+  }
+  
+  .content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+    color: white;
+    text-align: center; /* Center the content */
+    padding: 20px;
+  }
+  
+
+.container {
+    color: white;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 3px solid #00fffc;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+/* single_smile.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    margin-top: 50px; /* Adjust margin as needed */
+}
+
+
+
+#output-container {
+    margin-top: 20px;
+}
+#background-video {
+    position: fixed; /* Fixed position so it covers the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire container */
+    z-index: -1; /* Place the video behind other content */
+  }

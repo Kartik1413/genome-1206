@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Contents</title>
+</head>
+<body>
+    <h1>CSV Contents</h1>
+    <table>
+        <thead>
+            <tr>
+                <!-- Add headers here if available -->
+                 SMILES
+                 Molecule Name
+                 Molecular Formula
+                 Bond Information
+                 Functional Groups
+                 Atom Information
+                 Symmetry
+                 Planarity
+                 Molecular weight
+                 PiPi Stacking Potential
+                 Energetics
+                 ESP
+                 oxygen_balance
+                 Heat of formation
+                 NO2 Count
+                 NH2 Count
+                 H Count
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in contents %}
+            <tr>
+                {% for cell in row %}
+                <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

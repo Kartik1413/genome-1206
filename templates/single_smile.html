@@ -1,0 +1,55 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Smile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/single_smile.css') }}">
+</head>
+<body>
+    <div class="container">
+        <video autoplay muted loop id="background-video">
+            <source src="{{ url_for('static', filename='images/colpartical.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div> 
+        <div class="content">
+            <h1>Single Smile</h1>
+            <label for="smiles-input">Enter SMILES, molecule name, or molecular formula:</label>
+            <input type="text" id="smiles-input">
+            <button id="process-btn">Process</button>
+            <div id="output-container"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/single_smile.js') }}"></script>
+
+    <script>
+        
+        const viewMoreButton = document.getElementById('process-btn');
+
+        
+        viewMoreButton.addEventListener('click', function() {
+            
+            window.location.href = 'single_smile.html';
+        });
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single SMILE Input</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='single_smile_result.css') }}">
+</head>
+<body>
+    <h1>Enter SMILES String</h1>
+    <form method="post" action="{{ url_for('single_smile') }}">
+        <label for="smiles">SMILES:</label>
+        <input type="text" id="smiles" name="smiles">
+        <button type="submit">Predict 1</button>
+    </form>
+</body>
+</html>
+
